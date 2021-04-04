@@ -11,8 +11,6 @@ const StyledP = styled.p`
 `;
 
 const StyledBox = styled.p`
-  ${(props) => console.log('props.height: ', props.height)}
-  ${(props) => console.log('props.width: ', props.width)}
   height: ${(props) => props.height + 'px'};
   width: ${(props) => props.width + 'px'};
   background-color: red;
@@ -44,7 +42,7 @@ export function PToColor() {
   return (
     <div>
       <StyledP color={color}>This text has color : {color}.</StyledP>
-      <p>
+      <fieldset>
         <label htmlFor="hue">Hue: </label>
         <input type="text" id="hue" onChange={setHue} />
         <br />
@@ -52,14 +50,13 @@ export function PToColor() {
         <input type="text" id="luminosity" onChange={setLuminosity} />
         <br />
         <button onClick={updateColor}>Change color</button>
-      </p>
+      </fieldset>
       <p>
         <label htmlFor="height">Height: </label>
         <input
           type="text"
           id="height"
           onChange={(e) => {
-            console.log(e);
             setDraftHeight(e.target.value);
           }}
         />
@@ -69,7 +66,6 @@ export function PToColor() {
           type="text"
           id="width"
           onChange={(e) => {
-            console.log(e);
             setDraftWidth(e.target.value);
           }}
         />
@@ -80,26 +76,3 @@ export function PToColor() {
     </div>
   );
 }
-
-/* function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-} */
-
-//export default App;
